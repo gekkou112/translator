@@ -1,11 +1,29 @@
-<html>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Novel with GPT-4o</title>
     <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+    <h1>Translate Novel with GPT-4o</h1>
+    <div id="output"></div>
+
     <script>
-        puter.ai.chat("What are the benefits of exercise?")
-            .then(response => {
-                puter.print(response);
-            });
+        // Function to translate the text using GPT-4o via Puter.js
+        function translateText(text) {
+            puter.ai.chat(text)  // Menggunakan GPT-4o untuk menerjemahkan
+                .then(response => {
+                    document.getElementById("output").innerText = response;  // Menampilkan hasil terjemahan
+                });
+        }
+
+        // Example text to translate (you can replace this with any novel text)
+        const novelText = "私は強い冒険者になるために、全力で頑張ります。";
+
+        // Translate the example text
+        translateText(novelText);
     </script>
 </body>
 </html>
